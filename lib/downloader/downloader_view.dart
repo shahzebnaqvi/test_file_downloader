@@ -15,7 +15,7 @@ class DonwloaderView extends StatelessWidget {
         children: [
           ElevatedButton(onPressed: () {
 
-          donwloaderControl.downloadFile('https://www.dwsamplefiles.com/?dl_id=176','aaas-file.pdf');
+          donwloaderControl.downloadFile('https://www.dwsamplefiles.com/?dl_id=176','aa-afile.pdf');
 
 
           }, child: Text("Download the File"))

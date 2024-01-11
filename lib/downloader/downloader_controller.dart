@@ -25,6 +25,7 @@ class DonwloaderController extends GetxController {
       showNotification: true,
       openFileFromNotification: true,
     );
+
     // } else {
     //   print('Permission Denied');
     // }
@@ -35,12 +36,13 @@ class DonwloaderController extends GetxController {
     IsolateNameServer.registerPortWithName(
         port.sendPort, 'downloader_send_port');
     port.listen((dynamic data) {
+      print("sani $data");
       String id = data[0];
       DownloadTaskStatus status = DownloadTaskStatus.values[data[1]];
       int progress = data[2]; 
           FlutterDownloader.open(taskId: id);
       if (progress == 100 && id != null) {
-        Get.snackbar("File Downloaded", "Open File");
+        Get.snackbar("progress", id);
           FlutterDownloader.open(taskId: id);
       }
       update();
